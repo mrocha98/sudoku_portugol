@@ -46,11 +46,11 @@ programa
 		}*/
 	}
 
-	/*popula a matriz com o conteúdo do tabuleiro txt
-	 * e valida se os caracteres são válidos 
+	/*popula a matriz com o conteÃºdo do tabuleiro txt
+	 * e valida se os caracteres sÃ£o vÃ¡lidos 
 	 * ou se a linha tem menos de 17 caracteres
-	 * (9 números ou #'s + 8 separadores)
-	 * também chama a função popula a matriz de numeros dados usada na função loop
+	 * (9 nÃºmeros ou #'s + 8 separadores)
+	 * tambÃ©m chama a funÃ§Ã£o popula a matriz de numeros dados usada na funÃ§Ã£o loop
 	 */
 	funcao vazio setup(){
 		para(inteiro i = 0; i < LINHAS; i++){
@@ -59,7 +59,7 @@ programa
 			para(inteiro j = 0; j < COLUNAS; j++){
 				caracter c = txt.obter_caracter(linha, aux)
 				se(nao(caracterEhValido(c))){
-					//'e' é apenas um apelido para erro :P
+					//'e' Ã© apenas um apelido para erro :P
 					c = 'e'
 				}
 				matriz[i][j] = c
@@ -164,9 +164,9 @@ programa
 	}
 
 	/*
-	 * Quando ocorre um erro de região, a matriz analisada é 3x3, 
-	 * logo, ao informar a linha e a coluna com erro, esse número não passará de 3,
-	 * portanto, é necessário compensar esse valor conforme a região
+	 * Quando ocorre um erro de regiÃ£o, a matriz analisada Ã© 3x3, 
+	 * logo, ao informar a linha e a coluna com erro, esse nÃºmero nÃ£o passarÃ¡ de 3,
+	 * portanto, Ã© necessÃ¡rio compensar esse valor conforme a regiÃ£o
 	*/
 	funcao inteiro compensaLinhasDaRegiao(inteiro regiao){
 		se(regiao <= 3)
@@ -266,8 +266,8 @@ programa
 	}
 
 	/*
-	 * Cópia da função temErros que não realiza a verificação de caracteres invalidos,
-	 * pois só é preciso fazer essa validação na checagem do tabuleiro dado
+	 * CÃ³pia da funÃ§Ã£o temErros que nÃ£o realiza a verificaÃ§Ã£o de caracteres invalidos,
+	 * pois sÃ³ Ã© preciso fazer essa validaÃ§Ã£o na checagem do tabuleiro dado
 	*/
 	funcao logico temErrosSemInvalidos(){
 		para(inteiro i = 0; i < LINHAS; i++){
@@ -327,8 +327,8 @@ programa
 	}
 
 	funcao vazio fimDeJogo(){
-		//printaTabuleiro()
-		//escreva("\nEncontre o tabuleiro resolvido no arquivo resultado.txt!\n")
+		printaTabuleiro()
+		escreva("\nEncontre o tabuleiro resolvido no arquivo resultado.txt!\n")
 		registraTabuleiroNoResultado()
 	}
 
@@ -346,7 +346,7 @@ programa
 			//escreva("\n", valor, " gerou erro de coluna\n")
 			retorne falso
 		}senao se(erro_regiao){
-			//escreva("\n", valor, " gerou erro de região\n")
+			//escreva("\n", valor, " gerou erro de regiÃ£o\n")
 			retorne falso
 		}
 		retorne verdadeiro
@@ -378,7 +378,6 @@ programa
 	}
 
 	funcao caracter valor_celula(inteiro lin, inteiro col){
-		//marcelo++
 		caracter jogada = matriz[lin][col]
 		logico diferente_de_9 = jogada == '#' ou nao(jogada == '9')
 		se(diferente_de_9){
@@ -426,13 +425,10 @@ programa
 	funcao inicio(){
 		setup()
 		se(temErros() ou nao(mensagem_erro == "")){
-			escreva("Falha na execução do jogo.\nLeia o arquivo resultado.txt para mais detalhes.\n",mensagem_erro, "\n")
+			escreva("Falha na execuÃ§Ã£o do jogo.\nLeia o arquivo resultado.txt para mais detalhes.\n",mensagem_erro, "\n")
 			registraErrosNoResultado()
 		}
 		senao{
-			//escreva("TABULEIRO RECEBIDO: \n\n")
-			//printaTabuleiro()
-			//escreva("\n")
 			se(ganhou()){
 				escreva("TABULEIRO RESOLVIDO: \n\n")
 				fimDeJogo()
@@ -442,9 +438,7 @@ programa
 						percorre_tabuleiro(verdadeiro)	
 					}enquanto(ehNumeroDado(x, y))
 				}
-				//escreva("\nTABULEIRO RESOLVIDO: \n\n")
 				soluciona(x, y)
-				//escreva("RODEI ", marcelo, " VEZES!")
 			}
 		}
 	}
@@ -452,8 +446,8 @@ programa
 }
 /* $$$ Portugol Studio $$$ 
  * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
+ * Esta seÃ§Ã£o do arquivo guarda informaÃ§Ãµes do Portugol Studio.
+ * VocÃª pode apagÃ¡-la se estiver utilizando outro editor.
  * 
  * @POSICAO-CURSOR = 1133; 
  * @DOBRAMENTO-CODIGO = [54, 100, 130, 170, 179, 188, 213, 224, 271, 354];
